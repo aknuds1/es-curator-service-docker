@@ -6,12 +6,12 @@ import asyncio
 
 def _periodic():
     subprocess.check_call(['/usr/bin/curator', ] + sys.argv[1:])
-    loop.call_later(60 * 60 * 24, _periodic)
+    _loop.call_later(60 * 60 * 24, _periodic)
 
 
-loop = asyncio.get_event_loop()
-loop.call_soon(_periodic)
+_loop = asyncio.get_event_loop()
+_loop.call_soon(_periodic)
 try:
-    loop.run_forever()
+    _loop.run_forever()
 except KeyboardInterrupt:
     sys.exit(0)
