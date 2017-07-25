@@ -1,0 +1,2 @@
+# Elasticsearch Curator Service Docker Image
+This is a Python script which will daily run the Elasticsearch curator.
